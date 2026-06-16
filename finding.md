@@ -180,6 +180,10 @@ All magnitudes are small (Sharpe-like ratios well under 0.3). None of IT/PHARMA/
 
 Net effect of this diagnostic pass: the null finding is airtight, not just probable.
 
+### 5.6 Independent clean-room verification
+
+Everything above is reproducible in principle from the scripts in this repo, but "the script is designed to be reproducible" and "someone outside the original environment actually got the same result" are different claims. The second one was tested: a fresh GitHub Codespace was created directly from the public repo, with no access to the original development machine, local files, or cached dependencies. After `pip install -r requirements.txt` and `python run.py`, the pipeline ran with no code changes, manual fixes, or undocumented setup steps, and reproduced NIFTY_BANK at the 3-day horizon as the one cell significant before multiple-testing correction — matching `results/main_results.csv`'s `significant` column exactly. `validity_checks.py` (the Bonferroni/BH correction that brings this to 0/16) was not part of that particular run.
+
 ---
 
 ## 6. Limitations

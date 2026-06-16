@@ -48,8 +48,10 @@ data/holdout/            isolated holdout segment (Aug 2025 - Apr 2026) — neve
 data/clean/              pipeline intermediate outputs
 data/MANIFEST.md         data provenance — what's independently verified vs. merely declared
 results/                 all output tables and plots
-finding.md               the full research write-up
+finding.md               the full research write-up (source of truth — see note below)
 ```
+
+**Note on `finding_report.pdf` / `blog_post.pdf`:** these are point-in-time renders, not auto-generated from the current `.md` files. Last synced to `finding.md`/`blog_post.md` as of commit `1127776` (2026-06-16). `finding.md` has since gained a clean-room verification section (Section 5.6) that the PDF does not yet reflect — `finding.md` is the source of truth if the two ever disagree.
 
 ## Running it
 
@@ -63,6 +65,10 @@ python3 generate_manifest.py    # regenerate data/MANIFEST.md
 ```
 
 All numbers in `finding.md` are generated directly by these scripts — nothing is hand-computed or pasted in.
+
+## Independently verified
+
+A clean-room reproducibility test was run from a fresh GitHub Codespace created directly from this public repo — no access to the original development machine, local files, or cached dependencies. After installing `requirements.txt` and running `python run.py`, the pipeline executed with no code changes, manual fixes, or undocumented setup steps, and reproduced the expected output: NIFTY_BANK at the 3-day horizon as the one sector/horizon combination significant before multiple-testing correction, matching `results/main_results.csv`'s `significant` column. (`validity_checks.py` — the step that applies the Bonferroni/BH correction and brings that down to 0/16 — was not part of this particular run; see "Running it" above to reproduce the full result.)
 
 ## Known open gaps
 
