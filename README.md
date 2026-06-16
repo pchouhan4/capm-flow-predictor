@@ -72,4 +72,4 @@ All numbers in `finding.md` are generated directly by these scripts — nothing 
 
 ## License
 
-Not yet specified.
+MIT — see [LICENSE](LICENSE).
