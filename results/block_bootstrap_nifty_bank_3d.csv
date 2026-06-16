@@ -1,0 +1,2 @@
+naive_n,observed_hit_rate,block_bootstrap_var,naive_binomial_var,variance_inflation_factor,effective_n,p_block_bootstrap
+170,0.4,0.0020764886797299737,0.0014705882352941176,1.4120123022163822,120.39555160614213,0.0265
