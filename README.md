@@ -19,6 +19,14 @@ Does daily FII/DII institutional flow divergence predict the *direction* of CAPM
 
 Full methodology, all numbers, and the two-round correction history: **[finding.md](finding.md)**.
 
+## Before reading the results: the most important caveat
+
+The target variable is the sign of the CAPM pricing error under a rolling 60-day single-factor OLS model (sector return vs. Nifty 50). Single-factor rolling CAPM on Indian sector indices is a noisy benchmark: the residual contains alpha, omitted factor exposures (size, value, momentum), and sector-specific events — not just the flow-driven mispricing this project tries to detect. A real flow effect could exist and still not register against this target, because the signal-to-noise ratio of the target variable is low.
+
+**What this project rules out:** FII/DII flow divergence as a predictor of CAPM pricing-error *sign* under the single-factor model, 2015–2022.
+
+**What this project does not rule out:** flows mattering for residual returns, factor-neutral returns, or intraday price impact — none of which were tested. See `finding.md` Section 6 for full scope limitations.
+
 ## Why this is a null result worth reading
 
 Negative results in quant research are usually thrown away. This one is published because the process of getting here is itself informative:

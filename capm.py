@@ -48,6 +48,10 @@ def compute_capm_errors(df, beta_window=CAPM_BETA_WINDOW):
         df[f"{prefix}_excess"] = df[f"{prefix}_return"] - rf_daily
 
         # Rolling OLS: sector_excess ~ market_excess
+        # Note: this is O(n * beta_window) — a Python loop fitting one OLS per row.
+        # For the dataset sizes here (~1,900 days) this is fast enough.
+        # If extending to larger datasets, statsmodels.regression.rolling.RollingOLS
+        # runs the same computation with a recursive QR update and is significantly faster.
         betas = []
         alphas = []
 
