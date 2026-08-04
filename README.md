@@ -19,7 +19,7 @@ Does daily FII/DII institutional flow divergence predict the *direction* of CAPM
 
 ![Hit rate by sector and forward window — every bar sits near the 50% random line](results/03_hit_rates.png)
 
-Every bar is a sector × horizon cell; the dashed line is chance. Cells scatter between 36% and 58% with no consistent direction across horizons — what noise looks like — and none survives multiple-testing correction. The tallest bar (NIFTY_IT at 3 days, 58.1%, n=86) has an uncorrected p of 0.16 and a BH-adjusted p of 0.69.
+Every bar is a sector × horizon cell; the dashed line is chance. Cells scatter between 36% and 58% with no consistent direction across horizons — what noise looks like. The sign test is two-sided, so the cell that came closest to mattering is the *shortest* bar, not the tallest: NIFTY_BANK at 3 days, 38.4% (n=86), uncorrected p = 0.040, and it survived a distribution-free permutation test at p = 0.038. It then died on multiple-testing correction — Bonferroni 0.638, BH-FDR 0.465 — because it was one of 16 tests, not one. That cell is the subject of `finding.md`.
 
 Full methodology, all numbers, and the two-round correction history: **[finding.md](finding.md)**.
 
