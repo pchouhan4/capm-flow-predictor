@@ -17,6 +17,10 @@ Does daily FII/DII institutional flow divergence predict the *direction* of CAPM
 | Economic significance | Sharpe-like ratios near zero on the one borderline cell |
 | F&O OI as an equity-flow proxy (ancillary check) | **no relationship** — 48.9% sign agreement on 1,750 days, chance level |
 
+![Hit rate by sector and forward window — every bar sits near the 50% random line](results/03_hit_rates.png)
+
+Every bar is a sector × horizon cell; the dashed line is chance. Cells scatter between 36% and 58% with no consistent direction across horizons — what noise looks like — and none survives multiple-testing correction. The tallest bar (NIFTY_IT at 3 days, 58.1%, n=86) has an uncorrected p of 0.16 and a BH-adjusted p of 0.69.
+
 Full methodology, all numbers, and the two-round correction history: **[finding.md](finding.md)**.
 
 ## Before reading the results: the most important caveat
